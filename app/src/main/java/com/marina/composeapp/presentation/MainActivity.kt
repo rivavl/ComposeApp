@@ -1,4 +1,4 @@
-package com.marina.composeapp
+package com.marina.composeapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.marina.composeapp.ui.theme.ComposeAppTheme
+import com.marina.composeapp.presentation.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
