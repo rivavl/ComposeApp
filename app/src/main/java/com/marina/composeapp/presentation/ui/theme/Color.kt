@@ -1,4 +1,4 @@
-package com.marina.composeapp.ui.theme
+package com.marina.composeapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
