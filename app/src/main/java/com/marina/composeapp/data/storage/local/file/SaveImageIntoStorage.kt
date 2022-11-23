@@ -6,9 +6,9 @@ interface SaveImageIntoStorage {
 
     suspend fun deleteImage(name: String)
 
-    suspend fun loadImage(name: String): InternalStoragePicture
-
-    suspend fun loadAllImages(): List<InternalStoragePicture>
+//    suspend fun loadImage(name: String): InternalStoragePicture
+//
+//    suspend fun loadAllImages(): List<InternalStoragePicture>
 
     suspend fun deleteAllImages()
 }

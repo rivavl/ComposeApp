@@ -7,7 +7,8 @@ interface CharacterRepository {
 
     suspend fun getCharacters(): Resource<List<CharacterEntity>>
     suspend fun getFavoriteCharacters(): Resource<List<CharacterEntity>>
-    suspend fun getSingleCharacter(): Resource<CharacterEntity>
-    suspend fun removeFavoriteCharacter()
+    suspend fun getSingleCharacter(id: Int): Resource<CharacterEntity>
+    suspend fun removeFavoriteCharacter(id: Int)
     suspend fun removeAllFavoriteCharacters()
+    suspend fun saveCharacter(character: CharacterEntity)
 }
