@@ -8,7 +8,7 @@ import javax.inject.Inject
 class GetSingleCharacter @Inject constructor(
     private val repository: CharacterRepository
 ) {
-    suspend operator fun invoke(): Resource<CharacterEntity> {
-        return repository.getSingleCharacter()
+    suspend operator fun invoke(id: Int): Resource<CharacterEntity> {
+        return repository.getSingleCharacter(id)
     }
 }

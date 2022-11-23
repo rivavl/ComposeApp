@@ -9,11 +9,17 @@ import com.marina.composeapp.data.storage.local.db.entity.CharacterDB
 @Dao
 interface CharacterDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveCharacter(pictureDB: CharacterDB)
+    suspend fun saveCharacter(characterDB: CharacterDB)
 
     @Query("select * from character")
     suspend fun getFavoriteCharacters(): List<CharacterDB>
 
+    @Query("select * from character where id=:id")
+    suspend fun getSingleCharacter(id: Int): CharacterDB
+
     @Query("delete from character where id=:id")
-    suspend fun removeCharacter(id: String)
+    suspend fun removeCharacter(id: Int)
+
+    @Query("delete from character")
+    suspend fun removeAllCharacters()
 }
