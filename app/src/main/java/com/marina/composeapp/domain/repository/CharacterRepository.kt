@@ -9,4 +9,5 @@ interface CharacterRepository {
     suspend fun getFavoriteCharacters(): Resource<List<CharacterEntity>>
     suspend fun getSingleCharacter(): Resource<CharacterEntity>
     suspend fun removeFavoriteCharacter()
+    suspend fun removeAllFavoriteCharacters()
 }
