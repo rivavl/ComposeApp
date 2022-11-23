@@ -3,8 +3,9 @@ package com.marina.composeapp.data.repository
 import com.marina.composeapp.domain.entity.CharacterEntity
 import com.marina.composeapp.domain.repository.CharacterRepository
 import com.marina.composeapp.util.Resource
+import javax.inject.Inject
 
-class CharacterRepositoryImpl : CharacterRepository {
+class CharacterRepositoryImpl @Inject constructor() : CharacterRepository {
     override suspend fun getCharacters(): Resource<List<CharacterEntity>> {
         TODO("Not yet implemented")
     }
