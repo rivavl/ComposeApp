@@ -3,17 +3,28 @@ package com.marina.composeapp.presentation
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
-import com.marina.composeapp.data.storage.remote.RetrofitInstance
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import androidx.activity.compose.setContent
+import com.marina.composeapp.di.component.DaggerAppComponent
+import com.marina.composeapp.presentation.list.CharacterListScreen
+import com.marina.composeapp.presentation.list.CharacterListViewModel
+import com.marina.composeapp.presentation.ui.theme.ComposeAppTheme
+import com.marina.composeapp.presentation.util.daggerViewModel
 
 class MainActivity : ComponentActivity() {
+    private lateinit var viewModel: CharacterListViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        GlobalScope.launch(Dispatchers.IO) {
-            val ch = RetrofitInstance.characterApi.getCharacters()
-            Log.e(this.javaClass.simpleName, ch.characterDtos.toString())
+        setContent {
+            ComposeAppTheme {
+                val component = DaggerAppComponent.factory().create(application)
+
+                val viewModel: CharacterListViewModel = daggerViewModel {
+                    Log.i("COMPNAVILOG", "create VM: Screen1ViewModel")
+                    component.getViewModel()
+                }
+                CharacterListScreen(viewModel = viewModel)
+            }
         }
     }
 }

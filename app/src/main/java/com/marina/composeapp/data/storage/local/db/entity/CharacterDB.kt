@@ -3,10 +3,12 @@ package com.marina.composeapp.data.storage.local.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "character", indices = [Index(value = ["id"], unique = true)])
 data class CharacterDB(
     @ColumnInfo(name = "id")
+    @PrimaryKey
     val id: Int,
     @ColumnInfo(name = "name")
     val name: String,
