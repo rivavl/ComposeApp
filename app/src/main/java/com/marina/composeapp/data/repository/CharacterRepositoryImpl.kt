@@ -3,8 +3,10 @@ package com.marina.composeapp.data.repository
 import android.app.Application
 import android.graphics.BitmapFactory
 import com.marina.composeapp.R
+import com.marina.composeapp.data.storage.local.db.AppDatabase
 import com.marina.composeapp.data.storage.local.db.dao.CharacterDao
 import com.marina.composeapp.data.storage.local.file.InternalStoragePicture
+import com.marina.composeapp.data.storage.local.file.SaveImageIntoFile
 import com.marina.composeapp.data.storage.local.file.SaveImageIntoStorage
 import com.marina.composeapp.data.storage.mapper.fromDBToEntity
 import com.marina.composeapp.data.storage.mapper.fromDtoToEntity
