@@ -3,8 +3,8 @@
 * Kotlin, Coroutines
 * Jetpack Compose
 * Retrofit
-* Dagger
-* Glide2
+* Dagger2
+* Glide
 * MVVM/Clean Arch
 
 ## Описание
@@ -18,7 +18,7 @@
 
 ### Что использованно
 
-    * Данные загружаются с [rickandmortyapi.com](https://rickandmortyapi.com)
+    * Данные загружаются с https://rickandmortyapi.com
 
 ### Скриншоты со светлой и темной темой
 
@@ -28,4 +28,4 @@
 
 ### Видео
 
-![Видео](video/XRecorder_27112022_194344.mp4?raw=true)
+video/XRecorder_27112022_194344.mp4
