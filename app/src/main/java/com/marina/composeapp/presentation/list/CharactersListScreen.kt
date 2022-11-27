@@ -1,59 +1,31 @@
 package com.marina.composeapp.presentation.list
 
-import android.app.Application
 import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.marina.composeapp.presentation.entity.CharacterUI
 import com.marina.composeapp.presentation.ui.theme.CharacterCard
 
 @OptIn(ExperimentalMaterialApi::class, ExperimentalFoundationApi::class)
 @Composable
 fun CharacterListScreen(viewModel: CharacterListViewModel) {
-    Scaffold(
-//        bottomBar = {
-//            BottomNavigation {
-//                val selectedItemPosition = remember {
-//                    mutableStateOf(0)
-//                }
-//
-//                val items = listOf(
-//                    NavigationItem.Home,
-//                    NavigationItem.Favourite,
-//                    NavigationItem.Profile
-//                )
-//                items.forEachIndexed { index, item ->
-//                    BottomNavigationItem(
-//                        selected = selectedItemPosition.value == index,
-//                        onClick = { selectedItemPosition.value = index },
-//                        icon = {
-//                            Icon(item.icon, contentDescription = null)
-//                        },
-//                        label = {
-//                            Text(text = stringResource(id = item.titleResId))
-//                        },
-//                        selectedContentColor = MaterialTheme.colors.onPrimary,
-//                        unselectedContentColor = MaterialTheme.colors.onSecondary
-//                    )
-//                }
-//            }
-//        }
-    ) {
+    Scaffold {
         val charactersList = viewModel.charactersList.observeAsState(listOf())
 
         LazyColumn(
-            modifier = Modifier.padding(it).fillMaxWidth(),
+            modifier = Modifier
+                .padding(it)
+                .fillMaxWidth()
+                .background(Color.Magenta),
             contentPadding = PaddingValues(
                 top = 16.dp,
                 start = 8.dp,
@@ -61,7 +33,7 @@ fun CharacterListScreen(viewModel: CharacterListViewModel) {
                 bottom = 72.dp
             ),
             verticalArrangement = Arrangement.spacedBy(8.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = CenterHorizontally
         ) {
             items(
                 items = charactersList.value,
@@ -79,10 +51,12 @@ fun CharacterListScreen(viewModel: CharacterListViewModel) {
                     directions = setOf(DismissDirection.EndToStart),
                 ) {
                     CharacterCard(
-                        modifier = Modifier.size(320.dp),
+                        modifier = Modifier
+                            .height(350.dp)
+                            .width(320.dp),
                         character = character,
                         onClickListener = {
-                            Log.e("MYTAG", character.name)
+                            Log.e(this.javaClass.simpleName, character.name)
                         }
                     )
                 }
