@@ -11,26 +11,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.marina.composeapp.presentation.ui.theme.CharacterCard
 
 @OptIn(ExperimentalMaterialApi::class, ExperimentalFoundationApi::class)
 @Composable
 fun CharacterListScreen(viewModel: CharacterListViewModel) {
-    Scaffold {
+    Scaffold(
+        modifier = Modifier.background(MaterialTheme.colors.primary),
+    ) {
         val charactersList = viewModel.charactersList.observeAsState(listOf())
 
         LazyColumn(
             modifier = Modifier
                 .padding(it)
-                .fillMaxWidth()
-                .background(Color.Magenta),
+                .fillMaxWidth(),
             contentPadding = PaddingValues(
                 top = 16.dp,
                 start = 8.dp,
                 end = 8.dp,
-                bottom = 72.dp
+                bottom = 16.dp
             ),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = CenterHorizontally

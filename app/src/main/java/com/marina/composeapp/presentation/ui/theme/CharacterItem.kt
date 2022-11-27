@@ -1,10 +1,14 @@
 package com.marina.composeapp.presentation.ui.theme
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
@@ -21,14 +25,22 @@ fun CharacterCard(
     Card(
         modifier = modifier
             .clickable { onClickListener() }
-            .fillMaxWidth(),
+            .background(MaterialTheme.colors.onBackground),
         elevation = 2.dp,
-    ) {
-        GlideImage(
-            model = character.image,
-            contentDescription = null,
-            modifier = modifier,
-            alignment = Alignment.TopCenter
-        )
+
+        ) {
+        Column {
+            GlideImage(
+                modifier = Modifier.size(320.dp),
+                model = character.image,
+                contentDescription = null
+            )
+            Text(
+                text = character.name,
+                color = MaterialTheme.colors.onBackground,
+                modifier = Modifier
+                    .padding(4.dp)
+            )
+        }
     }
 }
