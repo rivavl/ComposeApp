@@ -23,10 +23,7 @@
 ### Скриншоты со светлой и темной темой
 
 <div>
-  <img align="center" src="images/Screenshot_20221127-193551_ComposeApp.jpg" alt="Светлая тема" height="640" width="320">
-</div>
-<div>
-  <img align="center" src="images/Screenshot_20221127-193602_ComposeApp.jpg" alt="Темная тема" height="640" width="320">
+  <img align="center" src="images/screenshots.png" alt="Светлая и темная темы" height="640" width="320">
 </div>
 
 ### Видео
