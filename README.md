@@ -23,7 +23,7 @@
 ### Скриншоты со светлой и темной темой
 
 <div>
-  <img align="center" src="images/screenshots.png" alt="Светлая и темная темы" height="640" width="320">
+  <img align="center" src="images/screenshots.png" alt="Светлая и темная темы" height="640">
 </div>
 
 ### Видео
