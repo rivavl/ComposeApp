@@ -28,4 +28,5 @@
 
 ### Видео
 
-video/XRecorder_27112022_194344.mp4
+https://user-images.githubusercontent.com/91427690/204150223-1f9feeb6-4a2b-49f9-b73f-6c39f19da4f2.mp4
+
