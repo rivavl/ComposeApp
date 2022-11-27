@@ -7,13 +7,7 @@ fun CharacterEntity.fromEntityToUI(): CharacterUI {
     return CharacterUI(
         id = id,
         name = name,
-        image = image,
-        gender = gender,
-        location = locationName,
-        origin = originName,
-        species = species,
-        status = status,
-        type = type
+        image = image
     )
 }
 
@@ -21,18 +15,4 @@ fun List<CharacterEntity>.fromEntityToUI(): List<CharacterUI> {
     return map {
         it.fromEntityToUI()
     }
-}
-
-fun CharacterUI.fromUIToEntity(): CharacterEntity {
-    return CharacterEntity(
-        id = id,
-        name = name,
-        image = image,
-        gender = gender,
-        locationName = location,
-        originName = origin,
-        species = species,
-        status = status,
-        type = type
-    )
 }
